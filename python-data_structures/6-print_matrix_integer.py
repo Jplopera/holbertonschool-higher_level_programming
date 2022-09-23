@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-from turtle import pensize
-
-
 def print_matrix_integer(matrix=[[]]):
     if matrix == [[]]:
         print("")
