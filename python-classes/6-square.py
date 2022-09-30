@@ -55,5 +55,5 @@ class Square:
             return
         for i in range(self.__position[1]):
             print()
-        for xj in range(self.__size):
+        for j in range(self.__size):
             print("{}{}".format(" " * self.position[0], "#" * self.__size))
