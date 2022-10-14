@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-""" Dcript that adds all arguments to a Python list
-and then save them to a file
-"""
+"""Contains add item function"""
+
+
+
 import json
 import sys
 import os.path
