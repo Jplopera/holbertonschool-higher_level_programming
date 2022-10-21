@@ -89,3 +89,13 @@ class Rectangle(Base):
         """__str__ method that returns a string"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """Updates attributes"""
+        if args is not None and len(args) is not 0:
+            list_u = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, list_u[i], args[i])
+        if kwargs is not None:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
