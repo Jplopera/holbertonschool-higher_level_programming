@@ -76,11 +76,14 @@ class Rectangle(Base):
 
     def display(self):
         """Prints the Rectangle"""
-        p_string = ""
-        p_string += "\n" * self.y
-        for i in range(self.height):
-            p_string += (" " * self.x) + ("#" * self.width) + "\n"
-        print(p_string[:-1])
+        for m in range(0, self.__y):
+            print()
+        for i in range(0, self.__height):
+            for n in range(0, self.__x):
+                print(" ", end="")
+            for j in range(0, self.__width):
+                print("#", end="")
+            print()
 
     def __str__(self):
         """__str__ method that returns a string"""
