@@ -1,0 +1,58 @@
+The ``2-matrix_divided`` module
+======================
+
+Using ``matrix_divided``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``matrix_divided`` from the ``2-matrix_divided`` module:
+
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Now use it:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+    >>> matrix_1 = [[8, 7, 6], [50, 60, 70], [4, 2, 1]]
+    >>> matrix_2 = [[8, 7, 6], [50, 70], [4, 2, 1]]
+    >>> matrix_3 = [[8, 7, 6], [50, 60, 70], ["hello", 'bro', "ok"]]
+    >>> matrix_4 = [[8.7, 7.5, 6.9], [50, 60, 70], [4.3, 2, 1]]
+    >>> matrix_5 = ([8, 5, 9], [4, 7, 1])
+    >>> matrix_6 = (7, 6, 9)
+    >>> matrix_7 = []
+    >>> matrix_8 = [[]]
+
+    >>> matrix_divided(matrix_1, 2)
+    [[4.0, 3.5, 3.0], [25.0, 30.0, 35.0], [2.0, 1.0, 0.5]]
+
+    >>> matrix_divided(matrix_2, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix = [
+	...     [1, 2, 3],
+	...     [4, 5, 6]
+	... ]
+	>>> matrix_divided(matrix, 'a')
+	Traceback (most recent call last):
+    TypeError: div must be a number
+    >>> matrix = [
+	...     [1, 2, 3],
+	...     [4, 5, 6]
+	... ]
+
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided()
+	Traceback (most recent call last):
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+    >>> matrix = [
+	...     [1, 2, 3],
+	...     [4, 5, 6]
+	... ]
+	>>> matrix_divided(matrix, float('inf'))
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
