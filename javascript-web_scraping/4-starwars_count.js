@@ -10,7 +10,7 @@ request(process.argv[2], function (error, response, body) {
   let chid = 0;
   for (let x = 0; x < results.length; x++) {
     for (let y = 0; y < results[x].characters.length; y++) {
-      if (results[i].characters[y].includes('18')) {
+      if (results[x].characters[y].includes('18')) {
         chid++;
       }
     }
